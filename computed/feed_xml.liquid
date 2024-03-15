@@ -26,6 +26,7 @@ metadata:
             <link rel="alternate" href="{{ metadata.url }}{{ alert.url }}"/>
             <updated>{% if alert.data.updated %}{{ alert.data.updated | dateToRfc3339 }}{% else %}{{ alert.data.created | dateToRfc3339 }}{% endif %}</updated>
             <published>{{ alert.data.created | dateToRfc3339 }}</published>
+            <pubDate>{{ alert.data.created | dateToRfc822 }}</pubDate>
             <id>{{ metadata.url }}{{ alert.url }}</id>
             <content xml:lang="{{ metadata.language }}" type="html" lang="{{ metadata.language }}">{{ alert.templateContent }}</content>
         </entry>

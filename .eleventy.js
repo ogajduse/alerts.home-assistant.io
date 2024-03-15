@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
   ))
 
   eleventyConfig.addLiquidFilter("dateToRfc3339", (value) => value ? pluginRss.dateToRfc3339(value) : "");
+  eleventyConfig.addLiquidFilter("dateToRfc822", (value) => value ? pluginRss.dateToRfc822(value) : "");
   eleventyConfig.addFilter("formatGitHubUrl", (value) => {const values = value.split("/"); return `${values[3]}/${values[4]}#${values[6]}`});
 
   eleventyConfig.addFilter("alertAsJson", (alert) => JSON.stringify(alertAsJson(alert, true)))
